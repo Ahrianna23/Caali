@@ -1,0 +1,352 @@
+/* Breakpoints */
+.menu-icon {
+  width: 40px;
+  height: 30px;
+  float: right;
+  right: 15px;
+  top: 20px;
+  position: fixed;
+  z-index: +999;
+  cursor: pointer;
+}
+.menu-icon-bar, .menu-dot {
+  width: 100%;
+  height: 2px;
+  background-color: #FFFCFC;
+  display: block;
+  opacity: 1;
+  transition: all ease 300ms;
+  position: absolute;
+  border-radius: 2px;
+}
+.menu-dot {
+  width: 5px;
+  height: 7px;
+  left: 45%;
+  top: 0;
+  border-radius: 100%;
+  background-color: #FEB68D;
+}
+/* Menu Bar (Single Bar) Styling */
+.bar-one { top: 40%; }
+.bar-two { top: 66%; }
+.bar-three { bottom: 0; }
+
+/* FLAME KEYFRAMES */
+@keyframes flameHide { 
+  0% { opacity: 1; }
+  100% { opacity: 0;}
+}
+@keyframes flameShow { 
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+/* MIDDLE BAR KEYFRAMES */
+@keyframes middleBarHide {
+  0% {
+      opacity: 1;
+      height: 2px;
+      top: 66%;
+      width: 95%;
+      left: 2.5%;
+
+  }
+  70% {
+      opacity: 1;
+      height: 5px;
+      top: 62%;
+      width: 110%;
+      left: -5%;
+
+  }
+  100% {
+      opacity: 0;
+      height: 2px;
+      top: 62%;
+      width: 90%;
+      left: 5%;
+      display: none;
+  }
+}
+@keyframes middleBarShow {
+  0% {
+      opacity: 0;
+      height: 2px;
+      top: 62%;
+      width: 90%;
+      left: 5%;
+      display: none;
+  }
+  70% {
+      opacity: .3;
+      height: 5px;
+      top: 62%;
+      width: 110%;
+      left: -5%;
+
+  }
+  100% {
+      opacity: 1;
+      height: 2px;
+      top: 66%;
+      width: 100%;
+      left: 0;
+      display: block;
+
+  }
+}
+
+/* TOP BAR KEYFRAMES */
+@keyframes topbarX {
+  0% { }
+  100% {
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 80%;
+      left: 10px;
+      top:20%;
+  }
+}
+@keyframes topbarL {
+  0% { 
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 100%;
+      left: 10px;
+      top:20%;
+  }
+  100% {
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      width: 100%;
+      left: 0;
+      top:40%;
+  }
+}
+
+/* BOTTOM BAR KEY FRAMES */
+@keyframes bottombarX {
+  0% { }
+  100% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(-45Deg);
+      -moz-transform: rotate(-45Deg);
+      -ms-transform: rotate(-45Deg);
+      transform: rotate(-45Deg);
+      width: 80%;
+      transition: all ease 400ms;
+      bottom: 0;
+      left: 10px;
+  }
+}
+@keyframes bottombarL {
+  0% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(-45Deg);
+      -moz-transform: rotate(-45Deg);
+      -ms-transform: rotate(-45Deg);
+      transform: rotate(-45Deg);
+      width: 100%;
+      transition: all ease 400ms;
+      bottom: -5px;
+      left: 10px;
+  }
+  100% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(0Deg);
+      -moz-transform: rotate(0Deg);
+      -ms-transform: rotate(0Deg);
+      transform: rotate(0Deg);
+      width: 100%;
+      transition: all ease 400ms;
+      bottom: 0;
+      left: 0;
+  }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px) { 
+  /* TOP BAR KEYFRAMES */
+@keyframes topbarX {
+  0% { }
+  100% {
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 100%;
+      left: 10px;
+      top:20%;
+  }
+}
+@keyframes topbarL {
+  0% { 
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 100%;
+      left: 10px;
+      top:20%;
+  }
+  100% {
+      -webkit-transform-origin: top left;
+      -moz-transform-origin: top left;
+      -ms-transform-origin: top left;
+      -o-transform-origin: top left;
+      transform-origin: top left;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      width: 100%;
+      left: 0;
+      top:40%;
+  }
+}
+
+/* BOTTOM BAR KEY FRAMES */
+@keyframes bottombarX {
+  0% { }
+  100% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(-45Deg);
+      -moz-transform: rotate(-45Deg);
+      -ms-transform: rotate(-45Deg);
+      transform: rotate(-45Deg);
+      width: 100%;
+      transition: all ease 400ms;
+      bottom: 0;
+      left: 10px;
+  }
+}
+@keyframes bottombarL {
+  0% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(-45Deg);
+      -moz-transform: rotate(-45Deg);
+      -ms-transform: rotate(-45Deg);
+      transform: rotate(-45Deg);
+      width: 100%;
+      transition: all ease 400ms;
+      bottom: -5px;
+      left: 10px;
+  }
+  100% {
+      -webkit-transform-origin: bottom left;
+      -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+      transform-origin: bottom left;
+      transform: rotate(-45Deg);
+      -webkit-transform: rotate(0Deg);
+      -moz-transform: rotate(0Deg);
+      -ms-transform: rotate(0Deg);
+      transform: rotate(0Deg);
+      width: 100%;
+      transition: all ease 400ms;
+      bottom: 0;
+      left: 0;
+  }
+}
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+    float: right;
+    right: 15px;
+    top: 2%;
+    position: fixed;
+    z-index: +999;
+    cursor: pointer;
+  }
+  .menu-icon-bar, .menu-dot {
+    width: 100%;
+    height: 2px;
+    background-color: #FFFCFC;
+    display: block;
+    opacity: 1;
+    transition: all ease 300ms;
+    position: absolute;
+    border-radius: 2px;
+  }
+  .menu-dot {
+    width: 3px;
+    height: 6px;
+    left: 45%;
+    top: 0;
+    border-radius: 100%;
+    background-color: #FEB68D;
+  }
+  /* Menu Bar (Single Bar) Styling */
+  .bar-one { top: 40%; }
+  .bar-two { top: 66%; }
+  .bar-three { bottom: 0; }
+}
+
+.menuDotHide { animation: flameHide 500ms ease forwards;}
+.menuDotShow { animation: flameShow 500ms ease forwards;}
+
+.menuTopX { animation:topbarX 500ms ease forwards; animation-delay: 800ms;}
+.menuTopL { animation:topbarL 500ms ease forwards; }
+
+.menuMiddleHide { animation: middleBarHide 500ms ease forwards;}
+.menuMiddleShow { animation: middleBarShow 500ms ease forwards; animation-delay: 800ms; opacity: 0;}
+
+.menuBottomX { animation: bottombarX 500ms ease forwards; animation-delay: 800ms;}
+.menuBottomL { animation: bottombarL 500ms ease forwards;}

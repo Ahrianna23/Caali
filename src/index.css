@@ -1,0 +1,945 @@
+/* Set Imports */
+@import url("https://use.typekit.net/ura0wzp.css");
+
+/* Set Global Styling Here */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: stymie-sc, serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  background-color: #E9E6E2;
+}
+/* APP.JSX (& FILES LIKE IT) WILL ALWAYS USE THIS AS BASE. DO NOT USE FOR ANYTHING OTHER THAN THAT */
+/* Component Wrapper is different! It's used IN components , this is for exported componets via app.jsx*/
+.Main-Global-Container {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  max-width: 1100px;
+}
+  /* Global Classes */
+  .Full-Width {
+    width: 100%;
+  }
+  .Full-Height {
+    min-height: 100vh;
+  }
+/* Animations Go Here */
+
+  /* Mobile Menu */
+  @keyframes MenuSlide {
+    0% {
+      right: -100vw;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  .MenuEnter {
+      animation: MenuSlide forwards ease-in-out 500ms;
+  }
+  /* Mobile Menu */
+  @keyframes MenuSlideExit {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -100vw;
+    }
+  }
+  .MenuExit {
+      animation: MenuSlideExit forwards ease-in-out 500ms;
+  }
+
+/* BREAK POINT - MOBILE PHONES */
+@media only screen and (min-width: 320px) and (max-width: 480px) { 
+    body { background: red; }
+  .Desktop-Nav { 
+    display: none;
+  }
+  .Desktop-Nav {
+    display: none;
+  }
+  .Mobile-Nav {
+    background-color: #253320;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+  }
+  .Mobile-Nav img {
+    width: 55px;
+    margin: 3vh 0;
+    margin-left: 5px;
+  }
+  .Mobile-Nav UL IMG {
+    display: none;
+  }
+  .Mobile-Nav UL {
+    position: absolute;
+    background-color: #1E291A;
+    /* EFECE9 */
+    background-image: url('../images/Caali-Leaf-Image-Menu.svg');
+    background-repeat: no-repeat;
+    background-position: 60vw 0;
+    top: 100%;
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    right: -100vw;
+    padding: 5% 0 0 0;
+    box-sizing: border-box;
+  }
+  .Mobile-Nav UL LI {
+    width: 90%;
+    list-style: none;
+    font-size: 1.2em;
+    color: #F9F8F8;
+    padding: 1px 5%;
+    margin: 0;
+  }
+  .Mobile-Nav UL A {
+    text-decoration: none;
+  }
+  .Mobile-Nav-AltItems {
+    background-color: rgba(60, 82, 51, 1);
+    /* background-image: url('../images/Caali-Leaf-Image-Menu-Bottom.svg');
+    background-repeat: no-repeat;
+    background-position: 60.3vw -60.9vh;
+    background-size: 400px;
+    position: absolute;
+    bottom: 0; */
+    padding: 10px 0;
+    width: 100%;
+  }
+  .Mobile-Nav-AltItems a li {
+    padding: 2px 5%;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #E5EDE2;
+  }
+}
+
+/* BREAK POINT - TABLETS */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .Desktop-Nav {
+    display: none;
+  }
+  .Mobile-Nav {
+    background-color: #253320;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+  }
+  .Mobile-Nav img {
+    width: 70px;
+    margin: 20px 0;
+    margin-left: 5px;
+  }
+  .Mobile-Nav UL {
+    position: absolute;
+    background-color: #253320;
+    top: 100%;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    right: -100vw;
+    padding: 20px 0 0 0;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow-y: scroll;
+  }
+  .Mobile-Nav UL IMG {
+    position: absolute;
+    top: -100px;
+    right: -200px;
+    width: 400px;
+    z-index: -1;
+    opacity: .7;
+  }
+  .Mobile-Nav UL LI {
+    width: 90%;
+    list-style: none;
+    font-size: 1.5em;
+    color: #E5EDE2;
+    padding: 5px 5%;
+    margin: 0;
+  }
+  .Mobile-Nav UL A {
+    text-decoration: none;
+  }
+  .Mobile-Nav-AltItems {
+    background-color: rgba(211, 204, 197, .2);
+    margin-top: 30px;
+    padding: 10px 0;
+    width: 100%;
+    border-top: 1px solid #3C5233;
+  }
+  .Mobile-Nav-AltItems a li {
+    padding: 2px 5%;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #E5EDE2;
+  }
+
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+
+  footer {
+    background-color: #433939;
+    width: 100vw;
+    height: auto;
+    float: left;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+  .Footer-Nav, .Footer-Partners, .Footer-Socials {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 0;
+    float: left;
+    color: white;
+    /* border: 1px solid white; */
+  }
+  .Footer-Nav LI {
+    list-style: none;
+    color: white;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 18px;
+    letter-spacing: .5px;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .Footer-Nav A {
+    text-decoration: none;
+  }
+  .Footer-Partners H4, .Footer-Socials H4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .Partner {
+    width: 50%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    display: inline-block;
+  }
+  .Partner IMG {
+    width: 70px;
+  }
+  .Footer-Socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .Footer-Socials H4 {
+    margin-bottom: 20px;
+  }
+  .Footer-Socials IMG {
+    width: 50px;
+  }
+  .copyright {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+  .Content-Body {
+    padding: 100px 0 30px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .Content-Body H1 { 
+    margin:0;
+    text-align: center;
+  }
+  .Min-Height {
+    min-height: 100VH;
+  }
+ }
+
+/* BREAK POINT - SMALL SCREENS */
+@media only screen and (min-width: 769px) and (max-width: 1024PX) { 
+  .Desktop-Nav {
+    display: none;
+  }
+  .Mobile-Nav {
+    background-color: #253320;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+  }
+  .Mobile-Nav img {
+    width: 70px;
+    margin: 20px 0;
+    margin-left: 5px;
+  }
+  .Mobile-Nav UL {
+    position: absolute;
+    background-color: #253320;
+    top: 100%;
+    width: 100%;
+    max-width: 400px;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    right: -100vw;
+    padding: 50px 0 0 0;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow-y: scroll;
+  }
+  .Mobile-Nav UL IMG {
+    position: absolute;
+    top: -100px;
+    right: -250px;
+    width: 400px;
+    z-index: -1;
+    opacity: .7;
+  }
+  .Mobile-Nav UL LI {
+    width: 90%;
+    list-style: none;
+    font-size: 1.5em;
+    color: #E5EDE2;
+    padding: 5px 5%;
+    margin: 0;
+  }
+  .Mobile-Nav UL A {
+    text-decoration: none;
+  }
+  .Mobile-Nav-AltItems {
+    background-color: rgba(211, 204, 197, .2);
+    margin-top: 8%;
+    padding: 10px 0;
+    width: 100%;
+    border-top: 1px solid #3C5233;
+  }
+  .Mobile-Nav-AltItems a li {
+    padding: 2px 5%;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #E5EDE2;
+  }
+
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+
+  footer {
+    background-color: #433939;
+    width: 100vw;
+    height: auto;
+    float: left;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+  .Footer-Nav, .Footer-Partners, .Footer-Socials {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 0; 
+    color: white;
+    /* border: 1px solid white; */
+  }
+  .Footer-Nav LI {
+    list-style: none;
+    color: white;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 18px;
+    letter-spacing: .5px;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  .Footer-Nav A {
+    text-decoration: none;
+  }
+  .Footer-Partners H4, .Footer-Socials H4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .Partner {
+    width: 50%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    display: inline-block;
+  }
+  .Partner IMG {
+    width: 70px;
+  }
+  .Footer-Socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .Footer-Socials H4 {
+    margin-bottom: 20px;
+  }
+  .Footer-Socials IMG {
+    width: 50px;
+  }
+  .copyright {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+  .Content-Body {
+    padding: 100px 0 30px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .Content-Body H1 { 
+    margin:0;
+    text-align: center;
+  }
+  .Min-Height {
+    min-height: 100VH;
+  }
+}
+
+/* BREAK POINT - DESKTOP & LARGE SCREENS */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) { 
+  .Mobile-Nav {
+    display: none;
+  }
+  .Desktop-Nav {
+    display: block;
+    background-color: #253320;
+    width: 100vw;
+    height: 65px;
+    z-index: 1;
+  }
+  .Desktop-Nav img {
+    width: 70px;
+    margin: 20px 0;
+    margin-left: 40px;
+    float: left;
+  }
+  .Desktop-Nav UL {
+    width: 500px;
+    float: right;
+    margin: 30px 30px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .Desktop-Nav-Links {
+    width: auto;
+    max-width: 100px;
+    list-style: none;
+    display: inline;
+    font-size: 1.5em;
+    color: #D9D2CC;
+    padding: 0 10px;
+    margin: 0;
+  }
+  .Desktop-Nav UL A {
+    text-decoration: none;
+  }
+  /* Dropdown Menu */
+  .Dropdown-Parent {
+    position: relative;
+  }
+  .Dropdown-Parent UL {
+    position: fixed;
+    top:35px;
+    width: 100%;
+    left: 0;
+    background-color: #D9D2CC;
+    transition: ease all 500ms;
+    padding: 20px 15px;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    padding: 20px 15px;
+  }
+  .Desktop-Nav UL LI:hover {
+    color: #D3AB48;
+    text-decoration: underline;
+  }
+  .Dropdown-Parent:hover UL {
+    height: auto;
+    padding: 20px 15px;
+    opacity: 1;
+    z-index: 0;
+  }
+  .Dropdown-Parent UL LI {
+    font-size: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 0;
+    display: inline-block;
+    color: #3A332C;
+  }
+  .Dropdown-Menu-Items {
+    float: left;
+    width: 30%;
+  }
+  .Mega-Menus {
+    width: 60%;
+    float: right;
+    padding-top: 10px;
+  }
+  .Mega-Menus-Item {
+    float: left;
+    margin: 0 15px;
+    width: 120px;
+  }
+  .Mega-Menus-Item IMG {
+    width: 100%;
+    margin: 0;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  .Mega-Menus-Item P {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    color: #3A332C;
+  }
+
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+
+  footer {
+    background-color: #433939;
+    width: 100vw;
+    height: auto;
+    float: left;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+  .Footer-Nav, .Footer-Partners, .Footer-Socials {
+    width: 100%;
+    max-width: unset;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 0; 
+    color: white;
+    text-align: center;
+    /* border: 1px solid white; */
+  }
+  .Footer-Nav {
+    margin-bottom: 50px;
+  }
+  .Footer-Nav LI {
+    list-style: none;
+    color: white;
+    text-align: center;
+    margin: 0 15px;
+    font-size: 18px;
+    letter-spacing: .5px;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+    display: inline-block;
+  }
+  .Footer-Nav A {
+    text-decoration: none;
+  }
+  .Footer-Partners {
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+  .Footer-Partners H4, .Footer-Socials H4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .Partner {
+    width: auto;
+    height: auto;
+    padding: 10px 0;
+    margin: 0 30px;
+    text-align: center;
+    display: inline-block;
+  }
+  .Partner IMG {
+    width: 40px;
+  }
+  .Footer-Partners H4, P {
+    margin: 0;
+  }
+  .Footer-Socials {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+  .Footer-Socials H4 {
+    margin: 0 0 20px;
+  }
+  .Footer-Socials IMG {
+    width: 30px;
+    margin: 0 10px;
+  }
+  .copyright {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+  .Content-Body {
+    padding: 100px 0 30px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .Content-Body H1 { 
+    margin:0;
+    text-align: center;
+  }
+  .Min-Height {
+    min-height: 100VH;
+  }
+}
+
+/* BREAK POINT - XL LARGE SCREENS */
+@media (min-width: 1201px) { 
+  /* Max-Width */
+  .Max-Width {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .Mobile-Nav {
+    display: none;
+  }
+  .Desktop-Nav {
+    display: block;
+    background-color: #253320;
+    width: 100vw;
+    height: 65px;
+    z-index: 1;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+  .Desktop-Nav img {
+    width: 70px;
+    margin: 20px 0;
+    float: left;
+  }
+  .Desktop-Nav UL {
+    width: 500px;
+    float: right;
+    margin: 30px 30px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .Desktop-Nav-Links {
+    width: auto;
+    max-width: 100px;
+    list-style: none;
+    display: inline;
+    font-size: 1.5em;
+    color: #D9D2CC;
+    padding: 0 10px;
+    margin: 0;
+  }
+  .Desktop-Nav-Active-State {
+    color: #D3AB48;
+    text-decoration: underline;
+  }
+  .Desktop-Nav UL A {
+    text-decoration: none;
+  }
+  /* Dropdown Menu */
+  .Dropdown-Parent {
+    position: relative;
+  }
+  .Dropdown-Parent UL {
+    position: fixed;
+    top:35px;
+    width: 100%;
+    left: 0;
+    background-color: #D9D2CC;
+    transition: ease all 500ms;
+    padding: 20px 15px;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    padding: 20px 15px;
+  }
+  .Desktop-Nav UL LI:hover {
+    color: #D3AB48;
+    text-decoration: underline;
+  }
+  .Dropdown-Parent:hover UL {
+    height: auto;
+    padding: 20px 15px;
+    opacity: 1;
+    z-index: 0;
+  }
+  .Dropdown-Parent UL LI {
+    font-size: 18px;
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 0;
+    display: inline-block;
+    color: #3A332C;
+  }
+  .Dropdown-Menu-Items {
+    float: left;
+    width: 30%;
+  }
+  .Mega-Menus {
+    width: 50%;
+    float: right;
+    padding-top: 10px;
+  }
+  .Mega-Menus-Item {
+    float: left;
+    margin: 0 15px;
+    width: 120px;
+  }
+  .Mega-Menus-Item IMG {
+    width: 100%;
+    margin: 0;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  .Mega-Menus-Item P {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    color: #3A332C;
+  }
+  footer {
+    background-color: #433939;
+    width: 100vw;
+    height: auto;
+    float: left;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+  .Footer-Nav, .Footer-Partners, .Footer-Socials {
+    width: 100%;
+    max-width: unset;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 0; 
+    color: white;
+    text-align: center;
+    /* border: 1px solid white; */
+  }
+  .Footer-Nav {
+    margin-bottom: 50px;
+  }
+  .Footer-Nav LI {
+    list-style: none;
+    color: white;
+    text-align: center;
+    margin: 0 15px;
+    font-size: 18px;
+    letter-spacing: .5px;
+    font-family: stymie-sc, serif;
+    font-weight: 300;
+    font-style: normal;
+    display: inline-block;
+  }
+  .Footer-Nav A {
+    text-decoration: none;
+  }
+  .Footer-Partners {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    float: left;
+
+  }
+  .Footer-Partners H4, .Footer-Socials H4 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .Partner {
+    width: auto;
+    height: auto;
+    padding: 10px 0;
+    margin: 0 30px;
+    text-align: center;
+    display: inline-block;
+  }
+  .Partner IMG {
+    width: 40px;
+  }
+  .Footer-Partners H4, P {
+    margin: 0;
+  }
+  .Footer-Socials {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+  .Footer-Socials H4 {
+    margin: 0 0 20px;
+  }
+  .Footer-Socials IMG {
+    width: 30px;
+    margin: 0 10px;
+  }
+  .copyright {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+  /* ++++++++++ FOOTER STYLES +++++++++++ */
+  /* ++++++++++ +++++++++++++ +++++++++++ */
+  .Content-Body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+  }
+  .Content-Body H1 { 
+    margin:0;
+    text-align: center;
+  }
+  .Min-Height {
+    min-height: 100VH;
+  }
+
+  .Hero-Sections IMG, .Overlay {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    z-index: -1;
+  }
+  .Homepage-Hero {
+    background-image: url('../images/Caali-Placeholder-Hero.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .CTA-Content {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 500px;
+    padding: 20px 50px;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .Hero-Section {
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    margin: 0;
+    text-align: center;
+    background-color: #253320;
+    background-color: red;
+  }
+  .CTA-Content A {
+    text-decoration: none;
+  }
+  .CTA {
+    background-color: #000;
+    width: 20%;
+    max-width: 100px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  /* .Overlay {
+    height: 350px;
+    width: 100%;
+    position: fixed;
+    left: 0; 
+    top: 0;
+    background-color: black;
+    opacity: .9;
+    z-index: -1;
+  } */
+  .HP-Featured {
+    width: 100vw;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    background-color: #D3CCC5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+  }
+  .PLP-Card {
+    width: 300px;
+    height: 400px;
+    background-color: #E9E6E2;
+    border: 1px solid #746658;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .PLP-Card IMG {
+    width: 90%;
+    margin: 15px auto;
+    border-radius: 5px;
+  }
+  .Sub-Heading {
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+  }
+  .Product-Title {
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+  .Product-Price {
+    margin-top: 0;
+    color: #FE6E1B;
+  }
+}
