@@ -30,6 +30,27 @@ const Navbar = () => {
 
         document.getElementById("Mobile-Nav").classList.remove("MenuEnter");
         document.getElementById("Mobile-Nav").classList.add("MenuExit");
+        
+        // Shade Box for Mobile Nav
+        document.getElementById('Mobile-Nav-Shade-Box').classList.remove('mobile-nav-page-transition');
+        document.getElementById('Mobile-Nav-Shade-Box').classList.add('mobile-pt-exit');
+
+        // Actual Nav
+        document.getElementById("Mobile-Nav").classList.remove("mobile-nav-page-transition");
+
+        // Mobile Nav Content
+        document.getElementById('dropdown-nav-bg').classList.remove('animate__fadeInDownBig');
+        document.getElementById("menuitemone").classList.remove("animate__fadeInLeft");
+        document.getElementById("menuitemtwo").classList.remove("animate__fadeInLeft");
+        document.getElementById("menuitemthree").classList.remove("animate__fadeInLeft");
+        document.getElementById("menuitemfour").classList.remove("animate__fadeInLeft");
+        document.getElementById("menuitemfive").classList.remove("animate__fadeInLeft");
+
+        document.getElementById('altitemone').classList.remove("animate__fadeInRight");
+        document.getElementById('altitemtwo').classList.remove("animate__fadeInRight");
+        document.getElementById('altitemthree').classList.remove("animate__fadeInRight");
+        document.getElementById('altitemfour').classList.remove("animate__fadeInRight");
+        document.getElementById('altitemfive').classList.remove("animate__fadeInRight");
         menuState = false;
     }
     const menuClicked = () => { 
@@ -52,8 +73,29 @@ const Navbar = () => {
         document.getElementById('bar-three').classList.remove("menuBottomL");
         document.getElementById('bar-three').classList.add("menuBottomX");
 
-        document.getElementById("Mobile-Nav").classList.remove("MenuExit");
-        document.getElementById("Mobile-Nav").classList.add("MenuEnter");
+        document.getElementById('Mobile-Nav-Shade-Box').classList.remove('mobile-pt-exit');
+        document.getElementById('Mobile-Nav-Shade-Box').classList.add('mobile-nav-page-transition')
+
+        setTimeout(() => {
+            document.getElementById("Mobile-Nav").classList.remove("MenuExit");
+            document.getElementById("Mobile-Nav").classList.add("MenuEnter");
+        }, 300);
+
+
+        setTimeout(() => {
+            document.getElementById('dropdown-nav-bg').classList.add('animate__fadeInDown');
+            document.getElementById("menuitemone").classList.add("animate__fadeInLeft");
+            document.getElementById("menuitemtwo").classList.add("animate__fadeInLeft");
+            document.getElementById("menuitemthree").classList.add("animate__fadeInLeft");
+            document.getElementById("menuitemfour").classList.add("animate__fadeInLeft");
+            document.getElementById("menuitemfive").classList.add("animate__fadeInLeft")
+
+            document.getElementById('altitemone').classList.add("animate__fadeInRight");
+            document.getElementById('altitemtwo').classList.add("animate__fadeInRight");
+            document.getElementById('altitemthree').classList.add("animate__fadeInRight");
+            document.getElementById('altitemfour').classList.add("animate__fadeInRight");
+            document.getElementById('altitemfive').classList.add("animate__fadeInRight");
+        }, 600)
 
         menuState = true;
     } else if( menuState == true){
@@ -134,73 +176,49 @@ const Navbar = () => {
             </nav>
 
             <nav class="Mobile-Nav">
-                <img src="../images/Caali-Logo-Single.svg" alt="Caali Logo" />
+                <img src="../images/Caali-Logo-2.svg" alt="Caali Logo" id="logo" class="animate__animated animate__fadeIn animate__delay-2s"/>
                 <div class="menu-icon" id="menu-icon" onClick={menuClicked}>
                     <div class="menu-dot" id="menu-dot"></div>
-                    <div class="menu-icon-bar bar-one" id="bar-one"></div>
-                    <div class="menu-icon-bar bar-two" id="bar-two"></div>
-                    <div class="menu-icon-bar bar-three" id="bar-three"></div>
+                    <div class="menu-icon-bar bar-one animate__animated animate__lightSpeedInRight animate__faster" id="bar-one"></div>
+                    <div class="menu-icon-bar bar-two animate__animated animate__lightSpeedInRight animate__faster " id="bar-two"></div>
+                    <div class="menu-icon-bar bar-three animate__animated animate__lightSpeedInRight animate__faster" id="bar-three"></div>
                 </div>
-                <ul id="Mobile-Nav">
-                <img src="../images/Caali-Leaf-Image-Menu.svg" alt="Caali Leaf Graphic for Mobile Menu" />
-                    {[
-                    {
-                        name: "Featured",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "All Candles",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "Decorative Candles",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "Hemp Candles",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "Coconut Soy Wax Candles",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "Collections",
-                        href: "#",
-                        classes: ""
-                    },
-                    {
-                        name: "Gifts",
-                        href: "#",
-                        classes: ""
-                    },].map((item, index) => {
-                    collectedNavItems.push(item);
-                    return (
-                        <NavigationItem key={item + index} title={item.name} href={item.href} class={item.classes} />
-                    )})
-                    }
+                <div id="Mobile-Nav-Shade-Box"></div>
+                <ul id="Mobile-Nav" class="">
+                    <img src="../images/Caali-Logo-Single.svg" alt="Caali Logo" id="dropdown-nav-bg" />
+                    <a href="#">
+                        <li class="Desktop-Nav-Links animate__animated" id="menuitemone"> Featured </li>
+                    </a>
+                    <a href="#">
+                        <li class="Desktop-Nav-Links animate__animated" id="menuitemtwo"> Shop All </li>
+                    </a>
+                    <a href="#">
+                        <li class="Desktop-Nav-Links animate__animated" id="menuitemthree"> BoHo Scents </li>
+                    </a>
+                    <a href="#">
+                        <li class="Desktop-Nav-Links animate__animated" id="menuitemfour"> Hemp Wax </li>
+                    </a>
+                    <a href="#">
+                        <li class="Desktop-Nav-Links animate__animated" id="menuitemfive"> Gift Boxes </li>
+                    </a>
+                    
                     <div class="Mobile-Nav-AltItems">
                         <a href="#">
-                            <li class=""> About </li>
+                            <li class="animate__animated" id="altitemone"> Sign In </li>
                         </a>
                         <a href="#">
-                            <li class=""> News </li>
+                            <li class="animate__animated" id="altitemtwo"> Our Story </li>
                         </a>
                         <a href="#">
-                            <li class=""> FAQ </li>
-                        </a>
-
-                        <a href="#">
-                            <li class=""> Coming Soon! </li>
+                            <li class="animate__animated" id="altitemthree"> Need Help? </li>
                         </a>
 
                         <a href="#">
-                            <li class=""> Returns & Exchanges </li>
+                            <li class="animate__animated" id="altitemfour"> Track an Order </li>
+                        </a>
+
+                        <a href="#">
+                            <li class="animate__animated" id="altitemfive"> Returns & Exchanges </li>
                         </a>
                     </div>
                     

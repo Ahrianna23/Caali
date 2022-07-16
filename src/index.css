@@ -1,15 +1,19 @@
 /* Set Imports */
 @import url("https://use.typekit.net/ura0wzp.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,800;0,900;1,300;1,400;1,800;1,900&family=Tangerine:wght@400;700&display=swap');
+@import 'animate.css';
 /* Set Global Styling Here */
 body {
   padding: 0;
   margin: 0;
-  font-family: stymie-sc, serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
   overflow-x: hidden;
-  background-color: #E9E6E2;
+  background-color: #F9F8F8;
+}
+body a {
+  text-decoration: none;
 }
 /* APP.JSX (& FILES LIKE IT) WILL ALWAYS USE THIS AS BASE. DO NOT USE FOR ANYTHING OTHER THAN THAT */
 /* Component Wrapper is different! It's used IN components , this is for exported componets via app.jsx*/
@@ -35,6 +39,7 @@ body {
     }
     100% {
       right: 0;
+      border-radius: 0;
     }
   }
   .MenuEnter {
@@ -44,13 +49,73 @@ body {
   @keyframes MenuSlideExit {
     0% {
       right: 0;
+      width: 100vw;
+      height: 100vw;
+      border-radius: 0;
     }
     100% {
-      right: -100vw;
+      right: -200vw;
+      border-radius: 100% 0 0 100%;
+      width: 200vw;
+      height: 100vw;
     }
   }
   .MenuExit {
       animation: MenuSlideExit forwards ease-in-out 500ms;
+  }
+
+  @keyframes ptRight {
+    0% {
+      right: -100vw;
+      border-radius: 40%;
+      transform: scaleX(0);
+    }
+    80% {
+      right: -100vw;
+      border-radius: 20%;
+      transform: scaleX(5);
+    }
+    100% {
+      right: -100vw;
+      border-radius: 0;
+      min-height: 100vh;
+      top: 0;
+      transform: scaleX(5);
+    }
+      /* right: 0vw;
+      border-radius: 0;
+      min-height: 100vh;
+      top: 0; scaleX(x)*/
+  }
+  .mobile-nav-page-transition {
+    animation: ptRight forwards ease-in-out 1s;
+  }
+
+  @keyframes ptRightExit {
+    0% {
+      right: -100vw;
+      border-radius: 40%;
+      transform: scaleX(5);
+      min-height: 100vh;
+    }
+    80% {
+      right: -100vw;
+      border-radius: 40%;
+      transform: scaleX(1);
+    }
+    100% {
+      right: -100vw;
+      border-radius: 40%;
+      min-height: 100vh;
+      transform: scaleX(0);
+    }
+      /* right: 0vw;
+      border-radius: 0;
+      min-height: 100vh;
+      top: 0; scaleX(x)*/
+  }
+  .mobile-pt-exit {
+    animation: ptRightExit forwards ease-in-out 1s;
   }
 
 /* BREAK POINT - MOBILE PHONES */
@@ -124,41 +189,55 @@ body {
 
 /* BREAK POINT - TABLETS */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    background-color: #253320;
+  }
   .Desktop-Nav {
     display: none;
   }
   .Mobile-Nav {
-    background-color: #253320;
     position: fixed;
     width: 100%;
     height: 70px;
+    z-index: +999;
   }
   .Mobile-Nav img {
-    width: 70px;
-    margin: 20px 0;
-    margin-left: 5px;
+    width: 100px;
+    margin: 25px 25px 0;
+    margin-left: 10px;
   }
+  #Mobile-Nav-Shade-Box {
+    position: absolute;
+    background-color: #314b29;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    right: -100vw;
+    z-index: 1;
+    /* TL - TR - BR - BL */
+    border-radius: 100% 0 0 100%;
+  }
+  
   .Mobile-Nav UL {
     position: absolute;
-    background-color: #253320;
-    top: 100%;
+    background-color: #161F13;
+    top: 0;
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
     margin: 0;
     right: -100vw;
-    padding: 20px 0 0 0;
+    padding: 100px 15px 0 0;
     box-sizing: border-box;
     z-index: 1;
     overflow-y: scroll;
+    /* TL - TR - BR - BL */
+    border-radius: 100% 0 0 100%;
+    
   }
-  .Mobile-Nav UL IMG {
-    position: absolute;
-    top: -100px;
-    right: -200px;
-    width: 400px;
-    z-index: -1;
-    opacity: .7;
+
+  .Mobile-Nav UL::-webkit-scrollbar {
+    display: none;
   }
   .Mobile-Nav UL LI {
     width: 90%;
@@ -167,30 +246,49 @@ body {
     color: #E5EDE2;
     padding: 5px 5%;
     margin: 0;
+    text-align: right;
   }
   .Mobile-Nav UL A {
     text-decoration: none;
   }
   .Mobile-Nav-AltItems {
-    background-color: rgba(211, 204, 197, .2);
+    background-color: rgba(211, 204, 197, 0);
     margin-top: 30px;
     padding: 10px 0;
     width: 100%;
-    border-top: 1px solid #3C5233;
   }
   .Mobile-Nav-AltItems a li {
     padding: 2px 5%;
-    font-family: stymie-sc, serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-style: normal;
     color: #E5EDE2;
   }
-
+  #altitemone {
+    color: #FBB03B;
+  }
+  #dropdown-nav-bg {
+    width: 600px;
+    position: absolute;
+    left: -180px;
+    top: 15vh;
+    opacity: .1 !important; 
+    transform: rotate(90deg) !important;
+  }
+  #logo {
+    left: 55px;
+  }
+  /* Setting animation delays for new mobile nav links */
+  #menuitemone, #altitemfive { animation-delay: 200ms; }
+  #menuitemtwo, #altitemtwo { animation-delay: 50ms; }
+  #menuitemthree, #altitemfour { animation-delay: 400ms; }
+  #menuitemfour, #altitemone { animation-delay: 100ms; }
+  #menuitemfive, #altitemthree { animation-delay: 300ms; }
   /* ++++++++++ FOOTER STYLES +++++++++++ */
   /* ++++++++++ +++++++++++++ +++++++++++ */
 
   footer {
-    background-color: #433939;
+    background-color: #F9F8F8;
     width: 100vw;
     height: auto;
     float: left;
@@ -203,18 +301,18 @@ body {
     margin: 0 auto 20px;
     padding: 0;
     float: left;
-    color: white;
+    color: #0B0014;
     /* border: 1px solid white; */
   }
   .Footer-Nav LI {
     list-style: none;
-    color: white;
+    color: #0B0014;
     text-align: center;
     margin: 5px 0;
     font-size: 18px;
     letter-spacing: .5px;
     font-family: stymie-sc, serif;
-    font-weight: 300;
+    font-weight: 500;
     font-style: normal;
   }
   .Footer-Nav A {
@@ -252,7 +350,7 @@ body {
     float: left;
     width: 100%;
     height: auto;
-    color: white;
+    color: #0B0014;
     text-align: center;
     margin: 50px 0 0 0;
   }
@@ -262,6 +360,9 @@ body {
     padding: 100px 0 30px;
     margin: 0;
     box-sizing: border-box;
+    height: 80vh;
+    position: relative;
+    
   }
   .Content-Body H1 { 
     margin:0;
@@ -269,6 +370,203 @@ body {
   }
   .Min-Height {
     min-height: 100VH;
+  }
+  /* .Homepage-Hero {
+    background-image: url('../images/Caali-Hero-Leaf-BG.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: 100% 50px;
+    height: 100%;
+  } */
+  #CTA-Content {
+    padding: 25px 50px;
+    position: relative;
+    color: #F9F8F8;
+    max-width: 380px;
+  }
+  
+  #hero-bg-img {
+    position: absolute;
+    right: -100px;
+    height: 60vh;
+    opacity: .5 !important; 
+  }
+
+  #leading-hero-txt {
+    font-size: 2em;
+    text-align: right;
+    margin-bottom: -40px;
+    margin-right: -10px;
+    font-style: italic;
+  }
+  #main-hero-txt {
+    font-size: 6em;
+    letter-spacing: 2px;
+    margin: 0;
+    text-align: left;
+    font-weight: 900;
+  }
+  #falling-hero-txt {
+    font-size: 3em;
+    text-align: left;
+    margin: -30px 0 20px 2px;
+  }
+  .sub-hero-txt {
+    margin: 0px 0 5px;
+    font-size: 1.3em;
+    font-weight: 200;
+    letter-spacing: 1.5px;
+  }
+  .CTA {
+    background-color: #FBB03B;
+    width: 30%;
+    max-width: 200px;
+    padding: 5px 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+    border: 1px solid #e69c25;
+  }
+
+  .HP-Intro { 
+    /* Change based on breakpoint */
+    min-height: 70vh;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .HP-Intro h3 {
+    font-family: 'Tangerine', cursive;
+    font-weight: bolder;
+    color: #F9F8F8;
+    font-size: 3em;
+    margin-bottom: 0;
+    opacity: 0;
+  }
+  .HP-Intro p {
+    color: #F9F8F8;
+    font-style: italic;
+    line-height: 180%;
+    letter-spacing: 1.5px;
+    opacity: 0;
+  }
+  #HP-Intro-CTA-Txt {
+    font-style: italic;
+    color: #E3C2FF;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 1.1em;
+    text-decoration: underline;
+    opacity: 0;
+  }
+  .HP-Featured {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    /* font-family: 'Nunito Sans', sans-serif; */
+  }
+
+  .Sub-Heading {
+    font-weight: 500;
+    margin: 25px 0;
+  }
+  #HP-Featured-SubHeading {
+    font-weight: bolder;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: white;
+  }
+  .PLP-Card {
+    position: relative;
+    min-height: 500px;
+    margin: 25px 0;
+  }
+  .HP-PLP-Left img {
+    position: absolute;
+    left: 0;
+  }
+  
+  .Product-Title {
+    margin: 0;
+  }
+  .Product-Price {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  .HP-PLP-Left  .Product-Title, .HP-PLP-Left .Product-Price, .HP-PLP-Left .hpplp-bttn {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    width: 60%;
+    padding: 20px 0;
+    font-size: 2em;
+    background-color: white;
+    border-radius: 0 5px 0 0;
+  }
+  .HP-PLP-Left .Product-Price {
+    margin-top: 82px;
+    width: 100px;
+    font-size: 1.2em;
+    background-color: white;
+    /* rgba(0, 0, 0, 1); */
+    border-top: none;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  .HP-PLP-Left .hpplp-bttn {
+    width: 200px;
+    padding: 10px 0;
+    margin-top: 160px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    background: #D3AB48;
+    color: #0B0014;
+    border-radius: 0 5px 0 0;
+  }
+  .HP-PLP-Left img, .HP-PLP-Left h3, .HP-PLP-Left p, .HP-PLP-Left a div{
+    opacity: 0;
+  }
+  
+  .HP-PLP-Right img {
+    position: absolute;
+    right: 0;
+  }
+  .HP-PLP-Right  .Product-Title, .HP-PLP-Right .Product-Price, .HP-PLP-Right .hpplp-bttn {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    width: 60%;
+    padding: 20px 0;
+    font-size: 2em;
+    background-color: white;
+    border-radius: 0 5px 0 0;
+  }
+  .HP-PLP-Right .Product-Price {
+    margin-top: 82px;
+    width: 100px;
+    font-size: 1.2em;
+    background-color: white;
+    /* rgba(0, 0, 0, 1); */
+    border-top: none;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  .HP-PLP-Right .hpplp-bttn {
+    width: 200px;
+    padding: 10px 0;
+    margin-top: 160px;
+    font-size: 1.2em;
+    font-weight: bolder;
+    background: #D3AB48;
+    color: #0B0014;
+    border-radius: 0 5px 0 0;
+  }
+  .HP-PLP-Right img, .HP-PLP-Right h3, .HP-PLP-Right p, .HP-PLP-Right a div{
+    opacity: 0;
   }
  }
 
@@ -847,7 +1145,7 @@ body {
   }
   .Content-Body H1 { 
     margin:0;
-    text-align: center;
+    text-align: left;
   }
   .Min-Height {
     min-height: 100VH;
@@ -862,38 +1160,55 @@ body {
     z-index: -1;
   }
   .Homepage-Hero {
-    background-image: url('../images/Caali-Placeholder-Hero.svg');
+    background-image: url('../images/Caali-Hero-03-Placeholder.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
   }
   .CTA-Content {
-    background-color: rgba(255, 255, 255, 0.8);
-    width: 500px;
+    background-color: rgba(255, 255, 255, 0);
+    width: 700px;
     padding: 20px 50px;
-    margin: 0 auto;
+    margin-left: 15%;
+    margin-top: 2%;
     border-radius: 5px;
+    color: white;
+    text-align: left;
+  }
+
+  /* .CTA-Content h1, p, a {
+    text-align: left;
+  } */
+  .CTA-Content h1 {
+    font-size: 4em;
+  }
+  .CTA-Content P {
+    font-size: 2em;
+    line-height: 120%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .Hero-Section {
     width: 100%;
-    height: auto;
+    height: 40vh;
     padding: 100px 0;
     margin: 0;
     text-align: center;
     background-color: #253320;
-    background-color: red;
   }
-  .CTA-Content A {
+  #cta-link {
+    margin: 20px;
     text-decoration: none;
   }
   .CTA {
-    background-color: #000;
+    background-color: rgb(255, 251, 0);
     width: 20%;
     max-width: 100px;
-    margin: 10px auto;
     padding: 10px;
     border-radius: 5px;
-    color: white;
+    color: black;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
   }
   /* .Overlay {
     height: 350px;
@@ -909,7 +1224,7 @@ body {
     width: 100vw;
     padding: 20px 50px;
     box-sizing: border-box;
-    background-color: #D3CCC5;
+    background-color: #F9F8F8;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
