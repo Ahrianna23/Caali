@@ -55,21 +55,21 @@ const Footer = () => {
                     <div class="Footer-Partners">
                         <h4>Our Partners</h4>
                         <div class="Partner">
-                            <img src="../images/Caali-Footer-Logo-Placeholder.png" alt="Logo for a Caali Partne" />
+                            <img src="https://caali.co/assets/Caali-Footer-Logo-Placeholder.png" alt="Logo for a Caali Partner" />
                             <p>Partner Name</p>
                         </div>
                         <div class="Partner">
-                            <img src="../images/Caali-Footer-Logo-Placeholder.png" alt="Logo for a Caali Partne" />
+                            <img src="https://caali.co/assets/Caali-Footer-Logo-Placeholder.png" alt="Logo for a Caali Partner" />
                             <p>Partner Name</p>
                         </div>
                     </div>
                     
                     <div class="Footer-Socials">
                         <h4>Follow Us</h4>
-                        <img src="../images/Caali-Social-Icons-IG.SVG" alt="Logo for Instagram, Caali's Page" />
-                        <img src="../images/Caali-Social-Icons-TT.SVG" alt="Logo for TikTok, Caali's Page" />
-                        <img src="../images/Caali-Social-Icons-TW.SVG" alt="Logo for Twitter, Caali's Page" />
-                        <img src="../images/Caali-Social-Icons-FB.SVG" alt="Logo for Facebok, Caali's Page" />
+                        <img src="https://caali.co/assets/Caali-Social-Icons-IG.png" alt="Logo for Instagram, Caali's Page" />
+                        <img src="https://caali.co/assets/Caali-Social-Icons-TT.png" alt="Logo for TikTok, Caali's Page" />
+                        <img src="https://caali.co/assets/Caali-Social-Icons-TW.png" alt="Logo for Twitter, Caali's Page" />
+                        <img src="https://caali.co/assets/Caali-Social-Icons-FB.png" alt="Logo for Facebok, Caali's Page" />
                     </div>
                     <p class="copyright"> &copy; {year } Caali LLC</p>
                 </div>

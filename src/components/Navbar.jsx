@@ -14,15 +14,15 @@ const Navbar = () => {
     // HANDLE MENU CLICK
     function collaspeMenu() {
         // Flame
-        document.getElementById('menu-dot').classList.remove("menuDotHide");
-        document.getElementById('menu-dot').classList.add("menuDotShow");
+        // document.getElementById('menu-dot').classList.remove("menuDotHide");
+        // document.getElementById('menu-dot').classList.add("menuDotShow");
 
         document.getElementById('bar-one').classList.remove("menuTopX");
         document.getElementById('bar-one').classList.add("menuTopL");
 
         // Middle Bar Bar
-        document.getElementById('bar-two').classList.add("menuMiddleShow");
         document.getElementById('bar-two').classList.remove("menuMiddleHide");
+        document.getElementById('bar-two').classList.add("menuMiddleShow");
 
         //  Bottom Bar
         document.getElementById('bar-three').classList.remove("menuBottomX");
@@ -58,8 +58,8 @@ const Navbar = () => {
         // document.getElementById('custom-mobile-nav').style.height = "100vh;"
 
        // Flame
-        document.getElementById('menu-dot').classList.remove("menuDotShow");
-        document.getElementById('menu-dot').classList.add("menuDotHide");
+        // document.getElementById('menu-dot').classList.remove("menuDotShow");
+        // document.getElementById('menu-dot').classList.add("menuDotHide");
 
         // // First Bar
         document.getElementById('bar-one').classList.remove("menuTopL");
@@ -176,16 +176,15 @@ const Navbar = () => {
             </nav>
 
             <nav class="Mobile-Nav">
-                <img src="../images/Caali-Logo-2.svg" alt="Caali Logo" id="logo" class="animate__animated animate__fadeIn animate__delay-2s"/>
+                <img src="http://caali.co/assets/Caali-Logo-2.svg" alt="Caali Logo" id="logo" class="animate__animated animate__fadeIn animate__delay-2s"/>
                 <div class="menu-icon" id="menu-icon" onClick={menuClicked}>
-                    <div class="menu-dot" id="menu-dot"></div>
                     <div class="menu-icon-bar bar-one animate__animated animate__lightSpeedInRight animate__faster" id="bar-one"></div>
                     <div class="menu-icon-bar bar-two animate__animated animate__lightSpeedInRight animate__faster " id="bar-two"></div>
                     <div class="menu-icon-bar bar-three animate__animated animate__lightSpeedInRight animate__faster" id="bar-three"></div>
                 </div>
                 <div id="Mobile-Nav-Shade-Box"></div>
                 <ul id="Mobile-Nav" class="">
-                    <img src="../images/Caali-Logo-Single.svg" alt="Caali Logo" id="dropdown-nav-bg" />
+                    <img src="http://caali.co/assets/Caali-Logo-Single.svg" alt="Caali Logo" id="dropdown-nav-bg" />
                     <a href="#">
                         <li class="Desktop-Nav-Links animate__animated" id="menuitemone"> Featured </li>
                     </a>

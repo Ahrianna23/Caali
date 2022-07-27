@@ -9,7 +9,7 @@ function App() {
   window.addEventListener('scroll', function() {
     var currentY = window.scrollY;
     // alert(currentY);
-    if(currentY >= 500){
+    if(currentY >= 400){
       document.getElementById('HP-Intro-Lead-Txt').classList.add('animate__fadeInUp')
       document.getElementById('HP-Intro-Falling-Txt').classList.add('animate__fadeInUp')
       document.getElementById('HP-Intro-CTA-Txt').classList.add('animate__fadeInUp')
@@ -46,7 +46,7 @@ function App() {
       <Navbar />
       <div class="Content-Body">
           <div class="Hero-Section Homepage-Hero">
-              <img src='../images/Caali-Hero-Leaf-BG.png' id='hero-bg-img' class="animate__animated animate__fadeInRight animate__delay-1s "/>
+              <img src='http://caali.co/assets/Caali-Hero-Leaf-BG.png' id='hero-bg-img' class="animate__animated animate__fadeInRight animate__delay-1s "/>
               <div id="CTA-Content">
                   <p id='leading-hero-txt' class="animate__animated animate__fadeInDown animate__fast">Hand Poured</p>
                   <h1 id='main-hero-txt' class="animate__animated animate__fadeInUp">Luxury</h1>
