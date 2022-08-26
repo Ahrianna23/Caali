@@ -52,8 +52,8 @@ function App() {
                   <h1 id='main-hero-txt' class="animate__animated animate__fadeInUp">Luxury</h1>
                   <p id='falling-hero-txt' class="animate__animated animate__fadeInUp animate__delay-1s">From Brooklyn</p>
                   <p class="sub-hero-txt animate__animated animate__fadeInUp animate__delay-1s">Luxe Candles</p>
-                  <p class="sub-hero-txt animate__animated animate__fadeInUp animate__delay-1s">Coconut Soy or Hemp Wax</p>
-                  <p class="sub-hero-txt animate__animated animate__fadeInUp animate__delay-1s">50hr Burn</p>
+                  <p class="sub-hero-txt animate__animated animate__fadeInUp animate__delay-1s">Vegan Wax</p>
+                  <p class="sub-hero-txt animate__animated animate__fadeInUp animate__delay-1s">30hr Burn</p>
                   <a href="#Shop" id="cta-link"> <div class="CTA animate__animated animate__zoomInUp animate__delay-1s"> Shop Now</div></a>
               </div>
           </div>
@@ -93,3 +93,4 @@ function App() {
 }
 
 export default App
+

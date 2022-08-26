@@ -510,6 +510,7 @@ body a {
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   body {
     background-color: #253320;
+    /* background-color: red; */
   }
   .Desktop-Nav {
     display: none;
@@ -525,7 +526,7 @@ body a {
   .Mobile-Nav img {
     width: 100px;
     margin: 25px 0 0;
-    margin-left: 40px;
+    margin-left: 20px;
   }
   #Mobile-Nav-Shade-Box {
     position: absolute;
@@ -703,8 +704,8 @@ body a {
     padding: 55px 5px 0;
     position: relative;
     color: #F9F8F8;
-    max-width: 480px;
-    margin: 0 100px;
+    max-width: 680px;
+    margin: 0 25px;
   }
   
   #hero-bg-img {
@@ -716,35 +717,36 @@ body a {
   
   #leading-hero-txt {
     font-size: 2em;
-    text-align: right;
+    text-align: center;
     margin-bottom: -40px;
-    margin-right: 30px;
     font-style: italic;
+    width: 100%;
   }
   #main-hero-txt {
     font-size: 7em;
     letter-spacing: 2px;
     margin: 0;
-    text-align: left;
+    text-align: center;
     font-weight: 900;
   }
   #falling-hero-txt {
-    font-size: 3.5em;
-    text-align: left;
-    margin: -25px 0 20px 2px;
+    font-size: 2.5em;
+    text-align: center;
+    margin: -20px 0 50px 0;
     font-weight: 200;
   }
   .sub-hero-txt {
-    margin: 0px 0 5px;
-    font-size: 1.5em;
+    margin: 0px 10px 5px;
+    font-size: 1.2em;
     font-weight: 200;
     letter-spacing: 1.5px;
+    text-align: center;
   }
   .CTA {
     background-color: #FBB03B;
     width: 150px;
     padding: 5px 10px;
-    margin: 15px 0;
+    margin: 15px auto;
     border-radius: 5px;
     color: black;
     text-align: center;
